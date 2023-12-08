@@ -1,8 +1,8 @@
 
 
 body {
-  background-color: lightgrey;
-  /* background-image:; */
+  padding: 0px;
+  margin: 0px;
 }
 #hi {
   color: red;
@@ -10,34 +10,22 @@ body {
 }
 
 #car {
- animation:move alternate 3s forwards; 
+ animation:move ease-out 5s forwards infinite; 
 }
 
 @keyframes move {
   0% {
     top:85%
   }
-  50% {
-    top:85%
-  }
-  100% {
-    top:45%;
-    width: 30px;
-    left: 47.5%;
-  }
-}
-
-
-/* .anim {
-  animation: text-anim 5.5s ease-in-out forwards;
-}
-
-@keyframes text-anim {
-  from{
-    margin-left: -50px;
-    opacity:0
-  }
-  to {
-    opacity: 1;
+  /* 50% {
+    top:65%;
+    width: 150px;
   } */
-/* } */
+  100% {
+    top:44.5%;
+    width: 10px;
+    left: 48%;
+  }
+}
+
+
