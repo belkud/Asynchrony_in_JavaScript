@@ -1,7 +1,43 @@
 
 
-
+body {
+  background-color: lightgrey;
+  /* background-image:; */
+}
 #hi {
   color: red;
-  background-color: greenyellow;
+  background-color: gray;
 }
+
+#car {
+ animation:move alternate 3s forwards; 
+}
+
+@keyframes move {
+  0% {
+    top:85%
+  }
+  50% {
+    top:85%
+  }
+  100% {
+    top:45%;
+    width: 30px;
+    left: 47.5%;
+  }
+}
+
+
+/* .anim {
+  animation: text-anim 5.5s ease-in-out forwards;
+}
+
+@keyframes text-anim {
+  from{
+    margin-left: -50px;
+    opacity:0
+  }
+  to {
+    opacity: 1;
+  } */
+/* } */
