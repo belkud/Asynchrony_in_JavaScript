@@ -7,25 +7,22 @@ body {
   justify-content: center;
   overflow: hidden;
 }
+
 #road {
   position: absolute; 
   width:1600px; 
   height: 100vh;
-  /* rotate: -3deg; */
-  /* margin-left: 50px; */
 }
 
 #car {
   width: 200px; 
   position: absolute;
-  /* left: 40%;  */
   top:85%;
- animation:move ease-out 5s forwards infinite; 
+  animation:move ease-out 5s forwards infinite; 
 }
 
 @keyframes move {
   0% {
-    /* top:85% */
     left: 48%;
   }
   /* 50% {
@@ -39,7 +36,8 @@ body {
   }
 }
 
-@media screen {
-  
+@media screen and (max-width: 768px) {
+  #road {
+  margin-left: 50px;
+ }
 }
-
