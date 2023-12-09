@@ -3,19 +3,30 @@
 body {
   padding: 0px;
   margin: 0px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
-#hi {
-  color: red;
-  background-color: gray;
+#road {
+  position: absolute; 
+  width:1600px; 
+  height: 100vh;
+  /* rotate: -3deg; */
+  /* margin-left: 50px; */
 }
 
 #car {
+  width: 200px; 
+  position: absolute;
+  /* left: 40%;  */
+  top:85%;
  animation:move ease-out 5s forwards infinite; 
 }
 
 @keyframes move {
   0% {
-    top:85%
+    /* top:85% */
+    left: 48%;
   }
   /* 50% {
     top:65%;
@@ -28,4 +39,7 @@ body {
   }
 }
 
+@media screen {
+  
+}
 
