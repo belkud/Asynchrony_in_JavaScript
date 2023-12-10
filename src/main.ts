@@ -109,7 +109,8 @@ function request(url) {
       }, 1000)
       
  
-
+    // Кривая Безье   
+    // cubic-bezier(x1, y1, x2, y2) 
 
 
 

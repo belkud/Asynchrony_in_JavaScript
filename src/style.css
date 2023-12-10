@@ -29,6 +29,7 @@ body {
     top:145%;
     width: 10px;
     left: 48%;
+    /* transform: translate(-15%, -55%); */
   }
 }
 #carInForest:hover {
@@ -37,3 +38,16 @@ background:linear-gradient(145deg, blue, red) !important;
 
 /*! Конец анимации */
 
+/* Кнопка 'машинка в лесу' */
+#carInForest {
+animation: fallingButton cubic-bezier(1,2.02,0,.41) 2s forwards 0s;
+}
+
+@keyframes fallingButton {
+  0% { 
+  }
+  100% {
+  transform: translateY(100px);
+  }
+}
+ 
