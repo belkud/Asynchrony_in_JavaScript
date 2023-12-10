@@ -1,8 +1,11 @@
 
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   padding: 0px;
   margin: 0px;
+  background-color: rgb(150, 148, 148);
 }
 #hi {
   color: red;
@@ -16,17 +19,20 @@ body {
 
 @keyframes move {
   0% {
-    top:85%
+    top:185%
   }
   /* 50% {
     top:65%;
     width: 150px;
   } */
   100% {
-    top:45%;
+    top:145%;
     width: 10px;
     left: 48%;
   }
+}
+#carInForest:hover {
+background:linear-gradient(145deg, blue, red) !important;
 }
 
 /*! Конец анимации */
