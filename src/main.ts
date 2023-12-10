@@ -178,3 +178,6 @@ async function fetchTodos(url:any) {
 
 
             //? Прочитать про IntersectionObserver
+
+
+            //! метод .text (). Возвращает или изменяет текстовое содержимое выбранных элементов
