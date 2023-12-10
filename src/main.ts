@@ -1,6 +1,18 @@
 import './style.css'
 
 
+
+// Надпись на асфальте
+
+const secondPage = document.querySelector('#secondPage') as HTMLDivElement
+const titleOnRoad = document.querySelector('#titleOnRoad') as HTMLDivElement
+secondPage.addEventListener ('mousemove', ()=> {
+    titleOnRoad.style.transition = 2.5+ 's'
+    titleOnRoad.style.border = 'none'
+    titleOnRoad.style.transform = `rotateX(68deg)`
+    // transform: rotateX(72deg);
+})
+
 //! JSON - JavaScript Object Notation
 
 let array = ['rub', 'euro', 'dollar']
@@ -146,3 +158,6 @@ async function fetchTodos(url:any) {
 
 
 
+            //! Асинхронные функции — функции, которые возвращают промисы.
+            //! Ключевое слово - async
+             

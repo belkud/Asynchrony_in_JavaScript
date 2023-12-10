@@ -26,7 +26,7 @@ body {
     width: 150px;
   } */
   100% {
-    top:145%;
+    top:147%;
     width: 10px;
     left: 48%;
     /* transform: translate(-15%, -55%); */
@@ -38,16 +38,25 @@ background:linear-gradient(145deg, blue, red) !important;
 
 /*! Конец анимации */
 
-/* Кнопка 'машинка в лесу' */
+/*! Анимация кнопки */
 #carInForest {
-animation: fallingButton cubic-bezier(1,2.02,0,.41) 2s forwards 0s;
-/*!Кубик-бэйзер     https://cubic-bezier.com/#.74,.31,.54,.68 */
+  transform-origin: left bottom;
+  animation: fallingButton cubic-bezier(1,2.02,0,.41) 3s forwards 0s;
+  /*!Кубик-бэйзер     https://cubic-bezier.com/#.74,.31,.54,.68 */
 }
 @keyframes fallingButton {
   0% { 
+    rotate: -25deg ;
+    transform: translateY(0px);
+  }
+  40% { 
+  rotate: 0deg ;
+  }
+  50% { 
+  transform: translateY(0px);
   }
   100% {
-  transform: translateY(100px);
+   transform: translateY(100px);
   }
 }
  
