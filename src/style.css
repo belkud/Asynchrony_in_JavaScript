@@ -41,8 +41,8 @@ background:linear-gradient(145deg, blue, red) !important;
 /* Кнопка 'машинка в лесу' */
 #carInForest {
 animation: fallingButton cubic-bezier(1,2.02,0,.41) 2s forwards 0s;
+/*!Кубик-бэйзер     https://cubic-bezier.com/#.74,.31,.54,.68 */
 }
-
 @keyframes fallingButton {
   0% { 
   }
