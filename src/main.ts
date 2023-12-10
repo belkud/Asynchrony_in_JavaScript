@@ -12,6 +12,8 @@ secondPage.addEventListener ('mousemove', ()=> {
     titleOnRoad.style.transform = `rotateX(68deg)`
     titleOnRoad.style.border = 'none'
     titleOnRoad.style.top = 168.5+'%'
+    titleOnRoad.style.color = 'rgb(193, 195, 196)'
+    titleOnRoad.style.background = 'none'
 })
 
 firstPage.addEventListener ('mousemove', ()=> {
@@ -19,11 +21,15 @@ firstPage.addEventListener ('mousemove', ()=> {
     titleOnRoad.style.transform = `rotateX(0deg)`
     titleOnRoad.style.top = 138.5+'%'
     titleOnRoad.style.border = '1px solid aliceblue'
+    titleOnRoad.style.color = 'white'
+    titleOnRoad.style.background = 'rgb(161, 170, 177, .5)'
     
 })
 
 
-//! JSON - JavaScript Object Notation
+//! JSON - (JavaScript Object Notation) — текстовый формат обмена данными, 
+//! основанный на JavaScript. Но при этом формат независим от JS и может 
+//! использоваться в любом языке программирования.
 
 let array = ['rub', 'euro', 'dollar']
 console.log(array);
@@ -45,44 +51,11 @@ const hi = document.querySelector('#hi') as HTMLDivElement
 
 // })
 
-//! JSON - (англ. JavaScript Object Notation) — текстовый формат обмена данными, 
-//! основанный на JavaScript. Но при этом формат независим от JS и может 
-//! использоваться в любом языке программирования.
 
 
 
 
-let prom = new Promise((resolve, reject) => {
-    resolve('Одобрено')
-})
-    .then((val) => {
-        console.log(val);
-    })
-    .catch((error) => {
-        console.log(error);
-        hi.style.backgroundColor = 'black'
-        hi.innerHTML = 'Ошибка'
-    })
-prom.finally(() => {
-    console.log('Выполнено');
-})
 
-
-
-
-fetchTodos('https://jsonplaceholder.typicode.com/todos/')
-
-async function fetchTodos(url:any) {
-    try {
-        const response = await fetch(url);
-        const json = await response.json();
-        console.log(json);
-    }catch(err) {
-        console.log(err);
-        
-    }
-    
-}
 
 // function main() {
 //     setTimeout(function greet() {
@@ -110,16 +83,16 @@ async function fetchTodos(url:any) {
   
 
 
-    async function loadPosts() {
-        const response = await fetch('/api/posts/')
-        const data = await response.json()
-        return data
-      }
+    // async function loadPosts() {
+    //     const response = await fetch('/api/posts/')
+    //     const data = await response.json()
+    //     return data
+    //   }
       
 
-      setTimeout(function greet() {
-        console.log('Hello!')
-      }, 1000)
+    //   setTimeout(function greet() {
+    //     console.log('Hello!')
+    //   }, 1000)
       
  
     // Кривая Безье   
@@ -142,42 +115,81 @@ async function fetchTodos(url:any) {
 
 
         
-        function request(url) {
-            return new Promise(function (resolve, reject) {
-              let responseFromServer
-              /*...*/
-              resolve(responseFromServer)
+        // function request(url) {
+        //     return new Promise(function (resolve, reject) {
+        //       let responseFromServer
+        //       /*...*/
+        //       resolve(responseFromServer)
+        //     })
+        //   }
+          
+        //   request('/api/users/1')
+        //     .then((user) => request(`/api/photos/${user.id}/`))
+        //     .then((photo) => request(`/api/crop/${photo.id}/`))
+        //     .then((response) => console.log(response))
+
+
+
+        let prom = new Promise((resolve, reject) => {
+            resolve('Одобрено')
+        })
+            .then((val) => {
+                console.log(val);
             })
-          }
-          
-          request('/api/users/1')
-            .then((user) => request(`/api/photos/${user.id}/`))
-            .then((photo) => request(`/api/crop/${photo.id}/`))
-            .then((response) => console.log(response))
-          
-            // !   https://doka.guide/js/async-in-js/#cikl-sobytiy
-
-
+            .catch((error) => {
+                console.log(error);
+                hi.style.backgroundColor = 'black'
+                hi.innerHTML = 'Ошибка'
+            })
+        prom.finally(() => {
+            console.log('Выполнено');
+        })
+        
+        
+        
+        
+        fetchTodos('https://jsonplaceholder.typicode.com/todos/')
+        
+        async function fetchTodos(url:any) {
+            try {
+                const response = await fetch(url);
+                const json = await response.json();
+                console.log(json);
+            }catch(err) {
+                console.log(err);
+                
+            }
+            
+        }
+            
+            //? Прочитать про IntersectionObserver
+            
+            
             //! Цикл событий  (Event loop) отвечает за выполнение кода, сбор и обработку
             //! событий и выполнение подзадач из очереди.
-
-
+            
+            
             //! Web API - эта дополнительная функциональность, берёт на себя работу с 
             //! таймерами, интервалами, обработчиками событий. То есть когда мы 
             //! регистрируем обработчик клика на кнопку — он попадает в окружение Web API. 
             //! Именно оно знает, когда обработчик нужно вызвать.
-
-
+            
+            
             //! fetch - функция, которая возвращает промис
-
-
-
+            
+            
+            
             //! Асинхронные функции — функции, которые возвращают промисы.
             //! Ключевое слово - async
-             
+            
+            
+            
+            
+            
+            // метод .text (). Возвращает или изменяет текстовое содержимое выбранных элементов
 
 
-            //? Прочитать про IntersectionObserver
 
 
-            //! метод .text (). Возвращает или изменяет текстовое содержимое выбранных элементов
+
+
