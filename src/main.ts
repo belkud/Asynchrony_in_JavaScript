@@ -82,13 +82,13 @@ async function fetchTodos(url:any) {
 //! регистрируем обработчик клика на кнопку — он попадает в окружение Web API. 
 //! Именно оно знает, когда обработчик нужно вызвать.
 
-function request(url) {
-    return new Promise(function (resolve, reject) {
-      let responseFromServer
-      /*...*/
-      resolve(responseFromServer)
-    })
-  }
+// function request(url) {
+//     return new Promise(function (resolve, reject) {
+//       let responseFromServer
+//       /*...*/
+//       resolve(responseFromServer)
+//     })
+//   }
   
 //   request('/api/users/1')
 //     .then((user) => request(`/api/photos/${user.id}/`))
@@ -111,6 +111,37 @@ function request(url) {
  
     // Кривая Безье   
     // cubic-bezier(x1, y1, x2, y2) 
+
+
+
+    // function request(url, onSuccess) {
+        /*...*/
+    // }
+        
+        // request('/api/users/1', function (user) {
+        //     request(`/api/photos/${user.id}/`, function (photo) {
+        //         request(`/api/crop/${photo.id}/`, function (response) {
+        //             console.log(response)
+        //         })
+        //     })
+        // })
+
+
+
+        
+        function request(url) {
+            return new Promise(function (resolve, reject) {
+              let responseFromServer
+              /*...*/
+              resolve(responseFromServer)
+            })
+          }
+          
+          request('/api/users/1')
+            .then((user) => request(`/api/photos/${user.id}/`))
+            .then((photo) => request(`/api/crop/${photo.id}/`))
+            .then((response) => console.log(response))
+          
 
 
 
