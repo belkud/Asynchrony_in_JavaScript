@@ -4,14 +4,24 @@ import './style.css'
 
 // Надпись на асфальте
 
+const firstPage = document.querySelector('#firstPage') as HTMLDivElement
 const secondPage = document.querySelector('#secondPage') as HTMLDivElement
 const titleOnRoad = document.querySelector('#titleOnRoad') as HTMLDivElement
 secondPage.addEventListener ('mousemove', ()=> {
     titleOnRoad.style.transition = 2.5+ 's'
-    titleOnRoad.style.border = 'none'
     titleOnRoad.style.transform = `rotateX(68deg)`
-    // transform: rotateX(72deg);
+    titleOnRoad.style.border = 'none'
+    titleOnRoad.style.top = 168.5+'%'
 })
+
+firstPage.addEventListener ('mousemove', ()=> {
+    titleOnRoad.style.transition = 2.5+ 's'
+    titleOnRoad.style.transform = `rotateX(0deg)`
+    titleOnRoad.style.top = 138.5+'%'
+    titleOnRoad.style.border = '1px solid aliceblue'
+    
+})
+
 
 //! JSON - JavaScript Object Notation
 
@@ -161,7 +171,10 @@ async function fetchTodos(url:any) {
             //! fetch - функция, которая возвращает промис
 
 
-            
+
             //! Асинхронные функции — функции, которые возвращают промисы.
             //! Ключевое слово - async
              
+
+
+            //? Прочитать про IntersectionObserver
