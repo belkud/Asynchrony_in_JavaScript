@@ -1,3 +1,4 @@
+import { Logger } from 'sass'
 import './style.css'
 
 
@@ -31,17 +32,17 @@ firstPage.addEventListener ('mousemove', ()=> {
 //! основанный на JavaScript. Но при этом формат независим от JS и может 
 //! использоваться в любом языке программирования.
 
-let array = ['rub', 'euro', 'dollar']
-console.log(array);
+// let array = ['rub', 'euro', 'dollar']
+// console.log(array);
 // console.log(array.join().split('').reverse().join(''));
 
 //! stringify - из объекта в строку
-let arrString = JSON.stringify(array)
-console.log(arrString);
+// let arrString = JSON.stringify(array)
+// console.log(arrString);
 
 //! parse - из строки в объект
-let arrParse = JSON.parse(arrString)
-console.log(arrParse);
+// let arrParse = JSON.parse(arrString)
+// console.log(arrParse);
 
 
 
@@ -130,39 +131,52 @@ const hi = document.querySelector('#hi') as HTMLDivElement
 
 
 
-        let prom = new Promise((resolve, reject) => {
-            resolve('Одобрено')
-        })
-            .then((val) => {
-                console.log(val);
-            })
-            .catch((error) => {
-                console.log(error);
-                hi.style.backgroundColor = 'black'
-                hi.innerHTML = 'Ошибка'
-            })
-        prom.finally(() => {
-            console.log('Выполнено');
-        })
+        // let prom = new Promise((resolve, reject) => {
+        //     resolve('Одобрено')
+        // })
+        //     .then(val => {
+        //         console.log(val);
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //         hi.style.backgroundColor = 'black'
+        //         hi.innerHTML = 'Ошибка'
+        //     })
+        // prom.finally(() => {
+        //     console.log('Выполнено');
+        // })
         
         
         
+ 
         
-        fetchTodos('https://jsonplaceholder.typicode.com/todos/')
-        
-        async function fetchTodos(url:any) {
-            try {
-                const response = await fetch(url);
-                const json = await response.json();
-                console.log(json);
-            }catch(err) {
-                console.log(err);
-                
-            }
-            
-        }
-            
+//? Работа с циклом
+
+// let mass = [
+//     {person : 'Vova', money: 500}, 
+//     {person : 'Nick', money: 1500}, 
+//     {person : 'Slava', money: 250},
+// ]
+
+// let total = 0
+// for (let i=0; i<mass.length; i++) {
+//     total +=mass[i].money   
+// }
+// console.log(total);
+
+
+//? Сложение через цикл всех чисел
+// let total = 0
+// for (let i=0; i<10; i++) {
+//     total +=i   
+// }
+// console.log(total);
+
+
+
+
             //? Прочитать про IntersectionObserver
+            
             
             
             //! Цикл событий  (Event loop) отвечает за выполнение кода, сбор и обработку
@@ -175,13 +189,16 @@ const hi = document.querySelector('#hi') as HTMLDivElement
             //! Именно оно знает, когда обработчик нужно вызвать.
             
             
+            //! Функция fetch () - это удобный способ отправки HTTP -запросов в JavaScript. Она
+            //! позволяет получать данные с сервера и отправлять данные на сервер,
+            
+            //? Асинхронные функции — функции, которые возвращают промисы.
+            
             //! fetch - функция, которая возвращает промис
-            
-            
-            
-            //! Асинхронные функции — функции, которые возвращают промисы.
-            //! Ключевое слово - async
-            
+
+            //! чтобы функции выполнялись в определенной последовательности (а не кто первей),
+            //! то для них создается общая функция, куда каждая функция записывается, и потом вызываем 
+            //! одну общую
             
             
             
@@ -191,5 +208,71 @@ const hi = document.querySelector('#hi') as HTMLDivElement
 
 
 
+// async - показывает, что функция асинхронная
+// await - заставляет ждать выполнение fetch
+
+
+
+//! первый способ
+
+    //! Промис создаётся с помощью конструктора.
+
+
+    //! resolve, reject - в конструктор передаётся функция-исполнитель асинхронной операции. 
+    //! Задача функции — выполнить асинхронную операцию и перевести состояние промиса 
+    //! в fulfilled (успех) или rejected (ошибка).
+let f1 = new Promise ((resolve,reject)=>{
+    
+    fetch ('https://jsonplaceholder.typicode.com/todos/')
+    
+    //! переводим промис в состояние fulfilled.
+    resolve('выполнение успешно')
+
+})
+.then(value=>{console.log(value = 'успех')})
+.catch(()=>{console.log('ошибка')})
+.finally (()=> {console.log('завершено')})
+
+
+
+//! второй способ (чаще используемый)
+ 
+async function f2() {
+    const response = await fetch ('https://jsonplaceholder.typicode.com/todos/');
+    return response.text();
+    // console.log('есть ок');   
+}
+
+let info = await f2()
+
+
+let score = 0
+for (let i=1; i<info.length; i++) {
+    // console.log(i);
+    score =info.length
+
+    
+}
+
+// console.log(info);
+console.log(score);
+
+
+
+//! возможно третий способ       
+// fetchTodos('https://jsonplaceholder.typicode.com/todos/')
+        
+// async function fetchTodos(url:any) {
+//     try {
+//         const response = await fetch(url);
+//         const json = await response.json();
+//         console.log(json);
+//     }catch(err) {
+//         console.log(err);
+        
+//     }
+    
+// }
+  
 
 
