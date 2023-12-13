@@ -232,30 +232,79 @@ let f1 = new Promise ((resolve,reject)=>{
 .then(value=>{console.log(value = 'успех')})
 .catch(()=>{console.log('ошибка')})
 .finally (()=> {console.log('завершено')})
+// console.log(f1);
 
 
 
 //! второй способ (чаще используемый)
  
-async function f2() {
-    const response = await fetch ('https://jsonplaceholder.typicode.com/todos/');
-    return response.text();
-    // console.log('есть ок');   
+async function f2(url:any) {
+    try {
+        const response = await fetch (url);
+        const json =await response.json()
+        console.log(json);  
+    } catch (err) {
+    (console.log(err))
+  }
 }
 
-let info = await f2()
+f2('https://jsonplaceholder.typicode.com/todos')
 
 
-let score = 0
-for (let i=1; i<info.length; i++) {
-    // console.log(i);
-    score =info.length
 
+function delay(ms:any, cb:any) {
+    setTimeout(cb, ms)
+}
+ delay(2000, ()=> {
+    try {
+        console.log(`задержка`);
+    }catch(error) {
+        console.log('ошиббка');
+        
+    }
     
-}
+ })
+
+
+ async function getStarWarsMovie(id) {
+    const response = await fetch(`https://swapi.dev/api/films/${id}/`)
+    console.log("ответ получен", response) // *1
+    return response.json()
+  }
+  
+  const movies = getStarWarsMovie(6).then((movie) => {
+    console.log(movie.title)
+  }) // *2
+  console.log("результат вызова функции", movies) // *3
+  
+
+
+
+
+// !!!!!!
+
+// async function f2() {
+//     const response = await fetch ('https://jsonplaceholder.typicode.com/todos');
+//     const json =await response.json()
+//     console.log(json);  
+// }
+// f2()
+
+
+
+// let info = await f2()
+
+
+// let score = 0
+// for (let i=1; i<info.length; i++) {
+//     score =info.length
+    
+    
+// }
+
 
 // console.log(info);
-console.log(score);
+// console.log(score);
 
 
 
@@ -276,3 +325,24 @@ console.log(score);
   
 
 
+
+
+
+
+
+
+async function wait() {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  
+    return 10;
+  }
+  
+  function f() {
+    wait().then(value => console.log(value));
+    // ...что здесь написать?
+    // чтобы вызвать wait() и дождаться результата "10" от async–функции
+    // не забывайте, здесь нельзя использовать "await"
+  }
+  f()
+
+  
