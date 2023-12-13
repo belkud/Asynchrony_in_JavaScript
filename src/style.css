@@ -16,7 +16,7 @@ body {
 
 /*! YouTube */
 /* команда в консоле $0.currentSrc  */ 
-#video {
+#video_container {
   display: flex; 
   flex-direction: column; 
   position: relative;
@@ -28,10 +28,10 @@ body {
   gap: 20px;
 }
 
-.video_media {
+#video_screen {
   width: 300px;
 }
-.video_btn {
+#video_btn {
   border-radius: 5px;
   background:linear-gradient(120deg, rgb(129, 219, 219), rgb(20, 20, 191));
   color: aliceblue;
@@ -40,7 +40,13 @@ body {
   cursor: pointer;
   
 }
+#frame_video {
+  position: absolute;
+  margin-top: 30px;
+  display: none;
+}
 
+/*! YouTube завершение */
 
 
 
@@ -59,7 +65,7 @@ body {
     width: 150px;
   } */
   100% {
-    top:147%;
+    top:145%;
     width: 10px;
     left: 48%;
     /* transform: translate(-15%, -55%); */

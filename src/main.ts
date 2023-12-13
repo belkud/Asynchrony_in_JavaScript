@@ -2,6 +2,22 @@ import { Logger } from 'sass'
 import './style.css'
 
 
+//! YouTube видео
+const video_screen = document.querySelector('#video_screen') as HTMLImageElement
+const frame_video = document.querySelector('#frame_video') as HTMLIFrameElement
+const video_btn = document.querySelector('#video_btn') as HTMLButtonElement
+video_btn.addEventListener ('click', ()=> {
+    frame_video.style.display = 'block'
+    video_screen.style.display = 'none'
+    frame_video.src = frame_video.src + '&autoplay=1'
+    console.log(1);
+    
+})
+
+//! завершнение YouTube видео
+
+
+
 
 // Надпись на асфальте
 
