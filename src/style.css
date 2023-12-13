@@ -12,6 +12,39 @@ body {
   background-color: gray;
 }
 
+
+
+/*! YouTube */
+/* команда в консоле $0.currentSrc  */ 
+#video {
+  display: flex; 
+  flex-direction: column; 
+  position: relative;
+  width: 0 auto;
+  height: 0;
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 250px;
+  gap: 20px;
+}
+
+.video_media {
+  width: 300px;
+}
+.video_btn {
+  border-radius: 5px;
+  background:linear-gradient(120deg, rgb(129, 219, 219), rgb(20, 20, 191));
+  color: aliceblue;
+  padding: 5px;
+  border-color: white;
+  cursor: pointer;
+  
+}
+
+
+
+
+
 /*! Анимация машинки */
 #car {
  animation:move ease-out 5s forwards infinite; 

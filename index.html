@@ -20,9 +20,16 @@
           <img src="public/event_loop.png" style="width: 400px;" alt="">
         </div>
         
-        <div  style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 50px;">
+        <div id="video">
           <h3>Видео с YouTube</h3>
-          <iframe src="https://www.youtube.com/watch?v=4JS70KB9GS0&t=15s" frameborder="0"></iframe>
+            <picture>
+              <a class="video_link" href=" https://www.youtube.com/watch?v=lyh2kAjcmSY">
+                <source srcset="https://i.ytimg.com/vi_webp/lyh2kAjcmSY/maxresdefault.webp" type="">
+                  <img class="video_media" src="https://i.ytimg.com/vi/lyh2kAjcmSY/maxresdefault.jpg" alt="Russia 4K - Scenic Relaxation Film with Calming Music">
+                </picture>
+              </a>
+                <button class="video_btn">Запустить видео</button>
+                <!-- <iframe src="https://www.youtube.com/watch?v=4JS70KB9GS0&t=15s" frameborder="0"></iframe> -->
         
         </div>
   </div>
@@ -45,6 +52,7 @@
 
 
   <script type="module" src="/src/main.ts"></script>
+  <script src="video.js"></script>
 </body>
 
 </html>
