@@ -12,7 +12,7 @@ body {
 
 
 #graphicContainer {
-  width: 50%;
+  width: 350px;
   margin: 50px;
   padding: 5px;
 }
@@ -33,7 +33,9 @@ body {
   color: red;
 }
 
-
+.test {
+  color: orange;
+}
 
 
 

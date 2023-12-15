@@ -3,6 +3,17 @@ import './style.css'
  
 
 
+let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
+let commits = await response.json()
+console.log(commits.Search)
+
+
+
+
+
+
+
+
 const buttonLines = document.querySelector('#buttonLines') as HTMLButtonElement
 const moveLines = document.querySelectorAll <HTMLDivElement> ('.moveLines')  
 buttonLines.addEventListener('click', ()=> {
