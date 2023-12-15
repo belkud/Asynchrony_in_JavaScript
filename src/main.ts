@@ -14,6 +14,9 @@ console.log(commits.Search)
 
 
 
+
+
+
 const buttonLines = document.querySelector('#buttonLines') as HTMLButtonElement
 const moveLines = document.querySelectorAll <HTMLDivElement> ('.moveLines')  
 buttonLines.addEventListener('click', ()=> {
