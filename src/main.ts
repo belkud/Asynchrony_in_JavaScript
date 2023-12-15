@@ -3,9 +3,10 @@ import './style.css'
  
 
 
+
 let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
 let commits = await response.json()
-console.log(commits.Search)
+// !!!ВАЖНО!!!!      console.log(commits.Search)
 
 
 
@@ -16,27 +17,80 @@ console.log(commits.Search)
 
 
 
+
+
+
+const massiveNum = [509, 78, 55, 91, 23, 77, 84, 12]
+for (let i=1; i<massiveNum.length+1; i++) {
+    
+    // console.log(massiveNum[i]);
+}
+// massiveNum[3]as number
+// console.log(massiveNum[3]);
+// console.log(massiveNum[3]as number);
+
+let score = 0
 
 const buttonLines = document.querySelector('#buttonLines') as HTMLButtonElement
 const moveLines = document.querySelectorAll <HTMLDivElement> ('.moveLines')  
-buttonLines.addEventListener('click', ()=> {
-    console.log(894);
+
+
+
+const test = document.querySelectorAll <HTMLDivElement> ('.test')  
+buttonLines.addEventListener('click',  ()=> {
+    for (let i=0; i<moveLines.length; i++) {
+        // console.log(digital);
+        
+        // console.log(moveLines[i].innerHTML);
+        let digital = (parseInt(moveLines[i].innerHTML))
+        console.log(massiveNum[i]);
+        moveLines[i].style.marginLeft = digital*.9 +'%'
+        
+        
+        console.log(moveLines[i].innerHTML);
+    }
     
+    setInterval( ()=>{
+        score+=1
+            moveLines[4].innerHTML = `${score}`
+            moveLines[2].innerHTML = `${massiveNum[3]}`
+        moveLines[3].innerHTML = `${massiveNum[3]}`
+    },130)
+    //     score+=1
+        
+
+        // if (score >=massiveNum[i.innerHTML]){
+        //     moveLines[2].innerText = `30`
+        //     moveLines[4].innerText = `30`
+        // }
+  
 })
 console.log(moveLines);
 
 
 
-for (let i=0; i<moveLines.length; i++) {
-    let digital = (parseInt(moveLines[i].innerHTML))
-    console.log(digital);
 
-    moveLines[i].style.paddingLeft = digital*3 +'px'
 
- 
-    console.log(moveLines[i].innerHTML);
-    
-}
+const changeDigitals = document.querySelector('#changeDigitals') as HTMLButtonElement
+changeDigitals.addEventListener('click', ()=>{
+
+        setInterval( ()=>{
+            score+=1
+            moveLines[2].innerHTML = `${score}`
+            moveLines[4].innerHTML = `${score}`
+            
+            if (score >=30){
+                moveLines[2].innerText = `30`
+                moveLines[4].innerText = `30`
+            }
+      
+            },100)
+       
+})
+
+console.log(test[0].innerText);
+
+
 
 // console.log(moveLines[3].style.paddingLeft = 100+'px')
 

@@ -17,7 +17,13 @@ body {
   padding: 5px;
 }
 #graphicContainer>div {
-  padding: 5px;
+  /* padding: 5px; */
+  margin-top: 10px;
+  background: #000;
+}
+
+.test {
+  color: orange;
 }
 
 .moveLines {
@@ -33,10 +39,13 @@ body {
   color: red;
 }
 
-.test {
-  color: orange;
+#changeDigitals {
+  background-color: aliceblue;
+  width: 60px;
+  margin: 25px;
+  text-align: center;
+  font-size: 1.3em;
 }
-
 
 
 
