@@ -10,45 +10,88 @@
 
 <body>
   <div style="height: 100vh;" id="firstPage">
+
+
+<div id="graphicContainer">
+  <div><div class="moveLines"> 59%</div></div>
+  <div><div class="moveLines">78%</div></div>
+  <div><div class="moveLines">91%</div></div>
+  <div><div class="moveLines">23%</div></div>
+  <div><div class="moveLines">84%</div></div>
+  <div><div class="moveLines" style="border-bottom: 1px solid black;">12%</div></div>
+</div>
+
+<button id="buttonLines">start</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
     <button id="carInForest" style="position: absolute; width: 150px;padding: 5px;border-radius: 5px;margin-left: 25px; margin-top: 250px; cursor: pointer;  
       background:linear-gradient(145deg, red, blue); border-color: aliceblue;"><a
-        style="transition: 1.5s; color: aliceblue; text-decoration-line: none;" href="#secondPage">Second page</a></button>
-        <div id="hi">Привет </div>
-        
-        <div style="display: flex; flex-direction: column; align-items:center; ">
-          <h3 style="text-shadow: 1px -1px 1px white;">Event loop (Цикл событий)</h3>
-          <img src="public/event_loop.png" style="width: 400px;" alt="">
-        </div>
-        
+        style="transition: 1.5s; color: aliceblue; text-decoration-line: none;" href="#secondPage">Second
+        page</a></button>
+  -->
 
-        <!--! YouTube видео -->
-        <div id="video_container">
-          <h3>Видео с YouTube</h3>
-            <!-- <picture> -->
-              
-                <!-- <source srcset="https://i.ytimg.com/vi_webp/lyh2kAjcmSY/maxresdefault.webp" type=""> -->
-                  <img id="video_screen" src="https://i.ytimg.com/vi/lyh2kAjcmSY/maxresdefault.jpg" alt="Russia 4K - Scenic Relaxation Film with Calming Music">
-                <!-- </picture> -->
-              
-                <iframe id="frame_video" style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/lyh2kAjcmSY?si=NrL_ghj3YUCr6Qts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <button  id="video_btn">Запустить видео</button>
-        </div>
+    <div style="display: flex; flex-direction: column; align-items:center; ">
+      <h3 style="text-shadow: 1px -1px 1px white;">Event loop (Цикл событий)</h3>
+      <img src="public/event_loop.png" style="width: 400px;" alt="">
+    </div>
+
+
+    <!--! YouTube видео -->
+    <!-- <div id="video_container">
+      <h3>Видео с YouTube</h3> -->
+      <!-- <picture> -->
+
+      <!-- <source srcset="https://i.ytimg.com/vi_webp/lyh2kAjcmSY/maxresdefault.webp" type=""> -->
+      <!-- <img id="video_screen" src="https://i.ytimg.com/vi/lyh2kAjcmSY/maxresdefault.jpg"
+        alt="Russia 4K - Scenic Relaxation Film with Calming Music"> -->
+      <!-- </picture> -->
+<!-- 
+      <iframe id="frame_video" style="display: none; " width="300" height="168.8" 
+        src="https://www.youtube.com/embed/lyh2kAjcmSY?si=NrL_ghj3YUCr6Qts" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;  web-share"
+        allowfullscreen></iframe>
+      <button id="video_btn">Запустить видео</button>
+    </div> -->
+    <!--! завершнение YouTube видео -->
+
+
+    <!-- <iframe width="280" height="157.5" style="margin-left: 50px;"  src="https://www.youtube.com/embed/LvQossUx7ss?si=_YHGtAKhMl7RDLbn"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe> -->
+
+
   </div>
-  <!--! завершнение YouTube видео -->
+
 
 
 
 
   <!--! Анимация машинки -->
-  <div id="secondPage" style="box-sizing: border-box;"> 
-    <div id="titleOnRoad"
-      style="position: absolute; background-color: rgb(161, 170, 177, .5); font-size: 3em; left: 37%; top: 138.5%; padding: 5px; color: white; border: 1px solid aliceblue; border-radius: 15px;">
-      Анимация отключена</div>
-    <img src="public/doroga.jpg" style="width: 100%;  height: 100vh;" alt="" srcset="">
-    <img id="car" src="public/car.png" style="width: 400px; position: absolute;
-      left: 36%; top:185%" alt="">
+  <!-- <div id="secondPage" style="box-sizing: border-box;"> -->
+    <!-- <div id="titleOnRoad" -->
+      <!-- style="position: absolute; background-color: rgb(161, 170, 177, .5); font-size: 3em; left: 37%; top: 138.5%; padding: 5px; color: white; border: 1px solid aliceblue; border-radius: 15px;"> -->
+      <!-- Анимация отключена</div> -->
+    <!-- <img src="public/doroga.jpg" style="width: 100%;  height: 100vh;" alt="" srcset=""> -->
+    <!-- <img id="car" src="public/car.png" style="width: 400px; position: absolute;
+      left: 36%; top:185%" alt=""> -->
     <!-- transform: translate(145%, -55%); -->
-  </div>
+  <!-- </div> -->
   <!--! Конец анимации -->
 
 
@@ -56,8 +99,6 @@
 
 
   <script type="module" src="/src/main.ts"></script>
-  <script src="video.js"></script>
 </body>
 
 </html>
-

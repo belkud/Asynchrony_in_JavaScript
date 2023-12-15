@@ -1,18 +1,255 @@
-import { Logger } from 'sass'
 import './style.css'
 
+ 
 
-//! YouTube видео
-const video_screen = document.querySelector('#video_screen') as HTMLImageElement
-const frame_video = document.querySelector('#frame_video') as HTMLIFrameElement
-const video_btn = document.querySelector('#video_btn') as HTMLButtonElement
-video_btn.addEventListener ('click', ()=> {
-    frame_video.style.display = 'block'
-    video_screen.style.display = 'none'
-    frame_video.src = frame_video.src + '&autoplay=1'
-    console.log(1);
+
+const buttonLines = document.querySelector('#buttonLines') as HTMLButtonElement
+const moveLines = document.querySelectorAll <HTMLDivElement> ('.moveLines')  
+buttonLines.addEventListener('click', ()=> {
+    console.log(894);
     
 })
+console.log(moveLines);
+
+
+
+for (let i=0; i<moveLines.length; i++) {
+    let digital = (parseInt(moveLines[i].innerHTML))
+    console.log(digital);
+
+    moveLines[i].style.paddingLeft = digital*3 +'px'
+
+ 
+    console.log(moveLines[i].innerHTML);
+    
+}
+
+// console.log(moveLines[3].style.paddingLeft = 100+'px')
+
+
+
+// console.log(moveLines.CSSStyleDeclaration);
+
+
+// console.log(moveLines.style.color);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//? метод .text (). Возвращает или изменяет текстовое содержимое выбранных элементов
+ 
+ //? в консоле catch, message 'возвращает' название ошибки, а не просто текст 
+ 
+ //? Метод map() позволяет трансформировать один массив в другой при помощи 
+ //? функций-колбэка. Переданная функция будет вызвана для каждого элемента 
+ //? массива по порядку. Из результатов вызова функции будет собран новый массив.
+
+ 
+
+
+
+
+
+ const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ const quadro = nums.map((num)=>{return(num*num)})
+ console.log(quadro);
+ 
+ const sum = nums.reduce((sum, x) => sum + x, 0)
+ console.log(sum);
+
+
+
+// for (let i=0; i<nums.length; i++) {
+// }
+
+
+ 
+
+
+
+ 
+ let east = 10
+ try {
+    let y
+    y = 5/east
+    console.log(`y = ${y}, 'отработано'`)
+ } catch (error:any) {
+    console.log(error.name);
+    console.log(error.message);
+    console.log(error.stack);
+ }
+ 
+
+
+
+
+
+
+
+//  g(array.join().split('').reverse().join(''));
+
+
+
+
+
+
+
+
+
+
+
+ 
+ const arr = []
+ let mass
+ for (let i=0; i<nums.length; i++) {
+     mass=i+1
+     arr.push(`${i * mass}`)
+     
+    }
+    console.log(arr);
+    let massive = arr
+    
+    const square = massive.map((numb:any)=>{return(numb*numb)})
+    console.log(square);
+ 
+ try {
+    jjj
+    console.log(333);
+    
+ } catch (error) {
+    console.log(error.message);
+    console.log(error);
+    // alert(error.stack);
+    
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ // ['0-1', '1-2', '2-3', '3-4', '4-5']
+ 
+//! 1 способ
+const promise = new Promise((resolve)=> {
+    resolve('Успешно выполнено')
+})
+
+promise
+.then(()=> {
+    console.log('Выполнено');
+})
+.catch((err)=> {
+    console.log(err.message);
+})
+.finally(()=>{
+    console.log('Завешение promisa');
+})
+
+console.log(promise);
+
+//! 2 способ
+fetch ('https://jsonplaceholder.typicode.com/todos')
+.then((response)=> response.json())
+.then((json)=>console.log(json))
+.catch((err)=> console.error(err.message))
+.finally(()=>{console.log('Завешение promisa')})
+
+//! для улучшения читабельности способа выше
+
+// Обычно скрипт в случае ошибки «падает» (сразу же останавливается), с выводом 
+// ошибки в консоль.
+
+// Но есть синтаксическая конструкция try..catch, которая позволяет «ловить» 
+// ошибки и вместо падения делать что-то более осмысленное.
+
+// async function prom(url) {
+//  try {
+//     const response = await fetch(url)
+//     const json = await response.json()
+//     console.log(json);
+//  } catch(err) {
+// console.log(err.message);
+
+//     }
+// }
+// prom('https://jsonplaceholder.typicode.com/todos')
+
+
+//! промисификация функции
+//  function delay(ms:number, cb:any) {
+//     setTimeout(cb, ms) 
+//  }
+// delay(500, ()=>{
+//     console.log('Задержка в 500ms');
+    
+// })
+
+// delay(2000, ()=> {
+//     try {
+//         console.log('Задержка в 2000ms');
+//     } catch (error:any) {
+//         console.log(error.message);
+              
+//     }
+    
+// })
+
+ 
+
+ 
+
+
+
+
+
+
+
+// function playVideo(){
+//     frame_video.play()
+// }
+//! YouTube видео
+// const video_screen = document.querySelector('#video_screen') as HTMLImageElement
+// const frame_video = document.querySelector('#frame_video') as HTMLIFrameElement
+// const video_btn = document.querySelector('#video_btn') as HTMLButtonElement
+// video_btn.addEventListener ('click', ()=> {
+//     if(video_btn.innerHTML == 'Запустить видео') {
+//         frame_video.style.display = 'block'
+//         // frame_video.src = frame_video.src + '&autoplay=1'
+//         video_btn.innerHTML = 'Остановить видео'
+//     }else {
+//         video_btn.innerHTML = 'Запустить видео'
+//         frame_video.style.display = 'none'
+//         // frame_video.src = frame_video.src + '&autoplay=0'
+//     }
+// })
 
 //! завершнение YouTube видео
 
@@ -21,27 +258,27 @@ video_btn.addEventListener ('click', ()=> {
 
 // Надпись на асфальте
 
-const firstPage = document.querySelector('#firstPage') as HTMLDivElement
-const secondPage = document.querySelector('#secondPage') as HTMLDivElement
-const titleOnRoad = document.querySelector('#titleOnRoad') as HTMLDivElement
-secondPage.addEventListener ('mousemove', ()=> {
-    titleOnRoad.style.transition = 2.5+ 's'
-    titleOnRoad.style.transform = `rotateX(68deg)`
-    titleOnRoad.style.border = 'none'
-    titleOnRoad.style.top = 168.5+'%'
-    titleOnRoad.style.color = 'rgb(193, 195, 196)'
-    titleOnRoad.style.background = 'none'
-})
+// const firstPage = document.querySelector('#firstPage') as HTMLDivElement
+// const secondPage = document.querySelector('#secondPage') as HTMLDivElement
+// const titleOnRoad = document.querySelector('#titleOnRoad') as HTMLDivElement
+// secondPage.addEventListener ('mousemove', ()=> {
+//     titleOnRoad.style.transition = 2.5+ 's'
+//     titleOnRoad.style.transform = `rotateX(68deg)`
+//     titleOnRoad.style.border = 'none'
+//     titleOnRoad.style.top = 168.5+'%'
+//     titleOnRoad.style.color = 'rgb(193, 195, 196)'
+//     titleOnRoad.style.background = 'none'
+// })
 
-firstPage.addEventListener ('mousemove', ()=> {
-    titleOnRoad.style.transition = 2.5+ 's'
-    titleOnRoad.style.transform = `rotateX(0deg)`
-    titleOnRoad.style.top = 138.5+'%'
-    titleOnRoad.style.border = '1px solid aliceblue'
-    titleOnRoad.style.color = 'white'
-    titleOnRoad.style.background = 'rgb(161, 170, 177, .5)'
+// firstPage.addEventListener ('mousemove', ()=> {
+//     titleOnRoad.style.transition = 2.5+ 's'
+//     titleOnRoad.style.transform = `rotateX(0deg)`
+//     titleOnRoad.style.top = 138.5+'%'
+//     titleOnRoad.style.border = '1px solid aliceblue'
+//     titleOnRoad.style.color = 'white'
+//     titleOnRoad.style.background = 'rgb(161, 170, 177, .5)'
     
-})
+// })
 
 
 //! JSON - (JavaScript Object Notation) — текстовый формат обмена данными, 
@@ -61,15 +298,7 @@ firstPage.addEventListener ('mousemove', ()=> {
 // console.log(arrParse);
 
 
-
-const hi = document.querySelector('#hi') as HTMLDivElement
-// hi.addEventListener('click',()=> {
-//     console.log('123')
-
-// })
-
-
-
+ 
 
 
 
@@ -117,20 +346,7 @@ const hi = document.querySelector('#hi') as HTMLDivElement
 
 
 
-    // function request(url, onSuccess) {
-        /*...*/
-    // }
-        
-        // request('/api/users/1', function (user) {
-        //     request(`/api/photos/${user.id}/`, function (photo) {
-        //         request(`/api/crop/${photo.id}/`, function (response) {
-        //             console.log(response)
-        //         })
-        //     })
-        // })
-
-
-
+ 
         
         // function request(url) {
         //     return new Promise(function (resolve, reject) {
@@ -147,21 +363,7 @@ const hi = document.querySelector('#hi') as HTMLDivElement
 
 
 
-        // let prom = new Promise((resolve, reject) => {
-        //     resolve('Одобрено')
-        // })
-        //     .then(val => {
-        //         console.log(val);
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //         hi.style.backgroundColor = 'black'
-        //         hi.innerHTML = 'Ошибка'
-        //     })
-        // prom.finally(() => {
-        //     console.log('Выполнено');
-        // })
-        
+ 
         
         
  
@@ -194,32 +396,32 @@ const hi = document.querySelector('#hi') as HTMLDivElement
             //? Прочитать про IntersectionObserver
             
             
-            
-            //! Цикл событий  (Event loop) отвечает за выполнение кода, сбор и обработку
-            //! событий и выполнение подзадач из очереди.
-            
-            
-            //! Web API - эта дополнительная функциональность, берёт на себя работу с 
-            //! таймерами, интервалами, обработчиками событий. То есть когда мы 
-            //! регистрируем обработчик клика на кнопку — он попадает в окружение Web API. 
-            //! Именно оно знает, когда обработчик нужно вызвать.
-            
-            
-            //! Функция fetch () - это удобный способ отправки HTTP -запросов в JavaScript. Она
-            //! позволяет получать данные с сервера и отправлять данные на сервер,
-            
-            //? Асинхронные функции — функции, которые возвращают промисы.
-            
-            //! fetch - функция, которая возвращает промис
 
-            //! чтобы функции выполнялись в определенной последовательности (а не кто первей),
-            //! то для них создается общая функция, куда каждая функция записывается, и потом вызываем 
-            //! одну общую
+//! Цикл событий  (Event loop) отвечает за выполнение кода, сбор и обработку
+//! событий и выполнение подзадач из очереди.
+
+
+//! Web API - эта дополнительная функциональность, берёт на себя работу с 
+//! таймерами, интервалами, обработчиками событий. То есть когда мы 
+//! регистрируем обработчик клика на кнопку — он попадает в окружение Web API. 
+//! Именно оно знает, когда обработчик нужно вызвать.
+
+
+//! Функция fetch () - это удобный способ отправки HTTP -запросов в JavaScript. Она
+//! позволяет получать данные с сервера и отправлять данные на сервер,
+
+//? Асинхронные функции — функции, которые возвращают промисы.
+
+//! fetch - функция, которая возвращает промис
+
+//! чтобы функции выполнялись в определенной последовательности (а не кто первей),
+//! то для них создается общая функция, куда каждая функция записывается, и потом вызываем 
+//! одну общую
             
             
             
             
-            // метод .text (). Возвращает или изменяет текстовое содержимое выбранных элементов
+           
 
 
 
@@ -237,61 +439,37 @@ const hi = document.querySelector('#hi') as HTMLDivElement
     //! resolve, reject - в конструктор передаётся функция-исполнитель асинхронной операции. 
     //! Задача функции — выполнить асинхронную операцию и перевести состояние промиса 
     //! в fulfilled (успех) или rejected (ошибка).
-let f1 = new Promise ((resolve,reject)=>{
+// let f1 = new Promise ((resolve,reject)=>{
     
-    fetch ('https://jsonplaceholder.typicode.com/todos/')
+//     fetch ('https://jsonplaceholder.typicode.com/todos/')
     
-    //! переводим промис в состояние fulfilled.
-    resolve('выполнение успешно')
-
-})
-.then(value=>{console.log(value = 'успех')})
-.catch(()=>{console.log('ошибка')})
-.finally (()=> {console.log('завершено')})
-// console.log(f1);
+    
 
 
-
-//! второй способ (чаще используемый)
- 
-async function f2(url:any) {
-    try {
-        const response = await fetch (url);
-        const json =await response.json()
-        console.log(json);  
-    } catch (err) {
-    (console.log(err))
-  }
-}
-
-f2('https://jsonplaceholder.typicode.com/todos')
-
-
-
-function delay(ms:any, cb:any) {
-    setTimeout(cb, ms)
-}
- delay(2000, ()=> {
-    try {
-        console.log(`задержка`);
-    }catch(error) {
-        console.log('ошиббка');
+// function delay(ms:any, cb:any) {
+//     setTimeout(cb, ms)
+// }
+//  delay(2000, ()=> {
+//     try {
+//         console.log(`задержка`);
+//     }catch(error) {
+//         console.log('ошиббка');
         
-    }
+//     }
     
- })
+//  })
 
 
- async function getStarWarsMovie(id) {
-    const response = await fetch(`https://swapi.dev/api/films/${id}/`)
-    console.log("ответ получен", response) // *1
-    return response.json()
-  }
+//  async function getStarWarsMovie(id) {
+//     const response = await fetch(`https://swapi.dev/api/films/${id}/`)
+//     console.log("ответ получен", response) // *1
+//     return response.json()
+//   }
   
-  const movies = getStarWarsMovie(6).then((movie) => {
-    console.log(movie.title)
-  }) // *2
-  console.log("результат вызова функции", movies) // *3
+//   const movies = getStarWarsMovie(6).then((movie) => {
+//     console.log(movie.title)
+//   }) // *2
+//   console.log("результат вызова функции", movies) // *3
   
 
 
@@ -347,18 +525,18 @@ function delay(ms:any, cb:any) {
 
 
 
-async function wait() {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+// async function wait() {
+//     await new Promise(resolve => setTimeout(resolve, 1000));
   
-    return 10;
-  }
+//     return 10;
+//   }
   
-  function f() {
-    wait().then(value => console.log(value));
+//   function f() {
+//     wait().then(value => console.log(value));
     // ...что здесь написать?
     // чтобы вызвать wait() и дождаться результата "10" от async–функции
     // не забывайте, здесь нельзя использовать "await"
-  }
-  f()
+//   }
+//   f()
 
   
