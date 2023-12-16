@@ -167,16 +167,16 @@ const changeDigitals = document.querySelector('#changeDigitals') as HTMLButtonEl
     const square = massive.map((numb:any)=>{return(numb*numb)})
     console.log(square);
  
- try {
-    jjj
-    console.log(333);
+//  try {
+//     jjj
+//     console.log(333);
     
- } catch (error) {
-    console.log(error.message);
-    console.log(error);
-    // alert(error.stack);
+//  } catch (error) {
+//     console.log(error.message);
+//     console.log(error);
+//     // alert(error.stack);
     
- }
+//  }
  
 
 
