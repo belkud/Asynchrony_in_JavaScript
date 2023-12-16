@@ -45,13 +45,19 @@ buttonLines.addEventListener('click',  ()=> {
             }
         }    
     },60)
-
+    
     for (let i=0; i<massiveNum.length; i++) {
         let digital = (massiveNum[i])
         moveLines[i].style.marginLeft = digital*.9 +'%'  
         moveLines[i].style.transition = digital/16 +'s'  
         
         console.log(massiveNum[i]);
+        setTimeout(() => {
+            moveLines[i].style.color = 'black'
+        }, 6000);
+        setTimeout(() => {
+            moveLines[i].style.color = 'white'
+        }, 12000);
     }
     
     

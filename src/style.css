@@ -31,7 +31,10 @@ body {
   border: 1px solid #000;
   background-color: gray;
   transition-timing-function: linear !important;
-
+  
+}
+.moveLines2 {
+  color: black;
 }
 
 #buttonLines {
