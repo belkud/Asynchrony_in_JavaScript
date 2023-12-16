@@ -20,91 +20,57 @@ let commits = await response.json()
 
 
 
-const massiveNum = [509, 78, 55, 91, 23, 77, 84, 12]
-for (let i=1; i<massiveNum.length+1; i++) {
-    
-    // console.log(massiveNum[i]);
-}
+
 // massiveNum[3]as number
 // console.log(massiveNum[3]);
 // console.log(massiveNum[3]as number);
 
 let score = 0
 
-const buttonLines = document.querySelector('#buttonLines') as HTMLButtonElement
+
 const moveLines = document.querySelectorAll <HTMLDivElement> ('.moveLines')  
 
+const massiveNum = [99, 78, 55, 91, 23, 77, 84, 45]
 
-
-const test = document.querySelectorAll <HTMLDivElement> ('.test')  
+const buttonLines = document.querySelector('#buttonLines') as HTMLButtonElement
 buttonLines.addEventListener('click',  ()=> {
-    for (let i=0; i<moveLines.length; i++) {
-        // console.log(digital);
-        
-        // console.log(moveLines[i].innerHTML);
-        let digital = (parseInt(moveLines[i].innerHTML))
-        console.log(massiveNum[i]);
-        moveLines[i].style.marginLeft = digital*.9 +'%'
-        
-        
-        console.log(moveLines[i].innerHTML);
-    }
-    
     setInterval( ()=>{
         score+=1
-            moveLines[4].innerHTML = `${score}`
-            moveLines[2].innerHTML = `${massiveNum[3]}`
-        moveLines[3].innerHTML = `${massiveNum[3]}`
-    },130)
-    //     score+=1
+        for (let i=0; i<=massiveNum.length; i++) {
+            moveLines[i].innerHTML = `${score}`
+            let num = massiveNum[i]
+            
+            if (moveLines[i].innerHTML>=num) {
+                moveLines[i].innerHTML=num
+            }
+        }
         
+    },60)
+    for (let i=0; i<massiveNum.length; i++) {
+        let digital = (massiveNum[i])
+        // console.log(digital);
+        moveLines[i].style.marginLeft = digital*.9 +'%'  
+        moveLines[i].style.transition = digital/16 +'s'  
+        
+        console.log(massiveNum[i]);
+    }
+    
+    
 
-        // if (score >=massiveNum[i.innerHTML]){
-        //     moveLines[2].innerText = `30`
-        //     moveLines[4].innerText = `30`
-        // }
+
+ 
+    
   
 })
-console.log(moveLines);
 
 
 
 
 
 const changeDigitals = document.querySelector('#changeDigitals') as HTMLButtonElement
-changeDigitals.addEventListener('click', ()=>{
+ 
 
-        setInterval( ()=>{
-            score+=1
-            moveLines[2].innerHTML = `${score}`
-            moveLines[4].innerHTML = `${score}`
-            
-            if (score >=30){
-                moveLines[2].innerText = `30`
-                moveLines[4].innerText = `30`
-            }
-      
-            },100)
-       
-})
-
-console.log(test[0].innerText);
-
-
-
-// console.log(moveLines[3].style.paddingLeft = 100+'px')
-
-
-
-// console.log(moveLines.CSSStyleDeclaration);
-
-
-// console.log(moveLines.style.color);
-
-
-
-
-
+ 
 
 
 
