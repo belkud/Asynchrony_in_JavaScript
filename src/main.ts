@@ -43,12 +43,11 @@ buttonLines.addEventListener('click',  ()=> {
             if (moveLines[i].innerHTML>=num) {
                 moveLines[i].innerHTML=num
             }
-        }
-        
+        }    
     },60)
+
     for (let i=0; i<massiveNum.length; i++) {
         let digital = (massiveNum[i])
-        // console.log(digital);
         moveLines[i].style.marginLeft = digital*.9 +'%'  
         moveLines[i].style.transition = digital/16 +'s'  
         
