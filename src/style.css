@@ -18,19 +18,20 @@ body {
 #graphicContainer>div {
   margin-top: 10px;
   background: black;
-  border: 1px solid white;
+  border: 2px solid aliceblue;
   height: 28px;
 }
 
 
 .moveLines {
-  margin: -1px;
+  margin: -2px;
   padding-left: 5px;
   padding: 5px;
   color: aliceblue;
-  border: 1px solid #000;
+  border: 2px solid #171717;
   background-color: gray;
   transition-timing-function: linear !important;
+  height: 19px;
   
 }
 .moveLines2 {
