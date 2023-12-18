@@ -4,6 +4,81 @@ import './style.css'
 
 
 
+
+
+const startChangeColor = document.querySelector('#startChangeColor') as HTMLButtonElement
+const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
+const randomColor = document.querySelector <HTMLDivElement>('#randomColor')  
+const randomColor2 = document.querySelector <HTMLDivElement>('#randomColor2')  
+const scoreNum = document.querySelector('#scoreNum') as HTMLDivElement
+
+
+const giftPicture = document.querySelector('#giftPicture') as HTMLPictureElement
+const monkey = document.querySelector('#monkey') as HTMLPictureElement
+
+
+
+startChangeColor.addEventListener('mouseup', ()=> {
+    giftPicture.style.transition = 3 +'s'
+
+    let x = randomColor.children[(Math.round(Math.random()*9))] 
+    
+    if(x.style.backgroundColor == 'yellow') {
+        x.style.backgroundColor = 'transparent'
+        
+        scoreNum.innerHTML += `${x.innerHTML} `
+    } else {
+        x.style.backgroundColor = 'yellow'
+        
+        scoreNum.innerHTML += `${x.innerHTML} `
+    }
+    
+    if (x==randomColor.children[9]){
+        // alert('Вы выиграли 0 рублей')
+        monkey.style.display = 'block'
+        giftPicture.style.display = 'block'
+        
+    }
+    console.log(x);
+    
+    
+})
+giftPicture.addEventListener('click',()=> {
+    alert('Вы выиграли 0 рублей')
+    setTimeout(() => {
+        monkey.style.marginTop = -65 +'px'
+        monkey.style.transition = 3 +'s'
+    }, 500);
+    setTimeout(() => {
+        monkey.style.marginTop = 0 +'px'
+        monkey.style.transition = 3 +'s'
+    }, 2500);
+})
+    
+ 
+
+    startChangeColor2.addEventListener('click', ()=> {
+        let x = randomColor2?.children[(Math.round(Math.random()*9))] 
+        
+        x.style.backgroundColor = 'greenyellow'
+        x.style.color = 'white'
+        
+        setTimeout(()=> {
+            x.style.backgroundColor = 'transparent'
+            
+        },500)            
+    })
+
+
+
+
+
+
+
+
+
+
+
 let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
 let commits = await response.json()
 // !!!ВАЖНО!!!!      console.log(commits.Search)
@@ -48,21 +123,21 @@ console.log(window.screen.height);
 console.log(window.fetch)
 
 
-document.addEventListener('mousemove',(e)=> {
-urlAddress.children[5].innerHTML = `по док-ту x:${e.pageX}px; <br> y:${e.pageY}px <br>`
-urlAddress.children[6].innerHTML = `по окну x:${e.clientX}px; <br> y:${e.clientY}px <br>`
-urlAddress.children[7].innerHTML = `${Math.round(Math.random())}`;
-let x = Math.round(Math.random()*5)
-if (x==1) {
-    urlAddress.style.backgroundColor = 'red'
-}
- else {
-    urlAddress.style.backgroundColor = 'blue'
+// document.addEventListener('mousemove',(e)=> {
+// urlAddress.children[5].innerHTML = `по док-ту x:${e.pageX}px; <br> y:${e.pageY}px <br>`
+// urlAddress.children[6].innerHTML = `по окну x:${e.clientX}px; <br> y:${e.clientY}px <br>`
+// urlAddress.children[7].innerHTML = `${Math.round(Math.random())}`;
+// let x = Math.round(Math.random()*5)
+// if (x==1) {
+//     urlAddress.style.backgroundColor = 'red'
+// }
+//  else {
+//     urlAddress.style.backgroundColor = 'blue'
 
-}
-console.log(x);
+// }
+// console.log(x);
 
-})
+// })
 
 
 
