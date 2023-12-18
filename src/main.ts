@@ -12,6 +12,58 @@ let commits = await response.json()
 
 
 
+//! РАЗБОР URL-адреса страницы 
+//! http://localhost:5173/Asynchrony_in_JavaScript/
+
+//! Полная ссылка
+// let url = window.location.href
+// console.log(url)
+
+// let url4 = window.location
+// console.log(url4)
+
+
+// let url2 = window.location.protocol //http:
+// console.log(url2)
+
+
+// let url3 = window.location.port //5173
+// console.log(url3)
+
+ 
+const urlAddress = document.querySelector('#urlAddress') as HTMLDivElement
+
+urlAddress.children[1].innerHTML = `Полный адрес: ${window.location}`
+urlAddress.children[2].innerHTML = `Протокол(делает запрос к серверу): ${window.location.protocol}`
+urlAddress.children[3].innerHTML = `Порт: ${window.location.port}`
+urlAddress.children[4].innerHTML = `history: ${JSON.stringify(window.history)}`
+urlAddress.children[5].innerHTML = `history: ${JSON.stringify(window.navigator)}`
+urlAddress.children[6].innerHTML = `history: ${JSON.stringify(window.screen)}`
+urlAddress.children[7].innerHTML = `history: ${JSON.stringify(window.fetch)}`
+// console.log(urlAddress.children[2]);
+
+console.log(window.history);
+console.log(window.navigator);
+console.log(window.screen.height);
+console.log(window.fetch)
+
+
+document.addEventListener('mousemove',(e)=> {
+urlAddress.children[5].innerHTML = `по док-ту x:${e.pageX}px; <br> y:${e.pageY}px <br>`
+urlAddress.children[6].innerHTML = `по окну x:${e.clientX}px; <br> y:${e.clientY}px <br>`
+urlAddress.children[7].innerHTML = `${Math.round(Math.random())}`;
+let x = Math.round(Math.random()*5)
+if (x==1) {
+    urlAddress.style.backgroundColor = 'red'
+}
+ else {
+    urlAddress.style.backgroundColor = 'blue'
+
+}
+console.log(x);
+
+})
+
 
 
 
@@ -25,8 +77,10 @@ let commits = await response.json()
 // console.log(massiveNum[3]);
 // console.log(massiveNum[3]as number);
 
-let score = 0
 
+//! Движение линий по обработчику 
+
+let score = 0
 
 const moveLines = document.querySelectorAll <HTMLDivElement> ('.moveLines')  
 
@@ -34,24 +88,32 @@ const massiveNum = [99, 78, 55, 91, 23, 77, 84, 45]
 
 const buttonLines = document.querySelector('#buttonLines') as HTMLButtonElement
 buttonLines.addEventListener('click',  ()=> {
+    if (buttonLines.innerHTML == 'Start (◕‿◕)') {
+        buttonLines.innerHTML = 'Come back'
+  
+
+        
+// счетчик цифр на увеличение
     setInterval( ()=>{
         score+=1
         for (let i=0; i<=massiveNum.length; i++) {
             moveLines[i].innerHTML = `${score}`
             let num = massiveNum[i]
             
-            if (moveLines[i].innerHTML>=num) {
-                moveLines[i].innerHTML=num
-            }
-        }    
+        if (moveLines[i].innerHTML>=num) {
+             moveLines[i].innerHTML=num
+        }
+      }    
     },60)
     
+
+    // 'Увеличение' строк
     for (let i=0; i<massiveNum.length; i++) {
         let digital = (massiveNum[i])
         moveLines[i].style.marginLeft = digital*.9 +'%'  
         moveLines[i].style.transition = digital/16 +'s'  
+      
         
-        console.log(massiveNum[i]);
         setTimeout(() => {
             moveLines[i].style.color = 'black'
         }, 6000);
@@ -60,22 +122,46 @@ buttonLines.addEventListener('click',  ()=> {
         }, 12000);
     }
     
-    
-
-
- 
-    
-  
+     
+//! кнопка 'come back'
+} else {
+    if (buttonLines.innerHTML = 'Start (◕‿◕)') {
+        // 'Уменьшение' строк
+        for (let i=0; i<massiveNum.length; i++) {
+            let digital = (massiveNum[i])
+            moveLines[i].style.marginLeft = 0 +'%'  
+            moveLines[i].style.transition = digital/16 +'s'  
+            }
+        }
+    }
 })
 
 
 
 
 
-const changeDigitals = document.querySelector('#changeDigitals') as HTMLButtonElement
- 
 
- 
+
+const changeDigitals = document.querySelector('#changeDigitals') as HTMLButtonElement
+changeDigitals.addEventListener('click', ()=> {
+    
+    if (changeDigitals.style.backgroundColor=='yellow'){
+        changeDigitals.style.backgroundColor='aliceblue'
+        
+        
+    }else {
+        changeDigitals.style.backgroundColor='yellow'
+        console.log(2);
+   
+
+            let reload = window.location.reload()
+            
+   
+        
+    }
+    
+})
+
 
 
 
@@ -449,9 +535,10 @@ fetch ('https://jsonplaceholder.typicode.com/todos')
 //! Функция fetch () - это удобный способ отправки HTTP -запросов в JavaScript. Она
 //! позволяет получать данные с сервера и отправлять данные на сервер,
 
+//! fetch - функция, которая возвращает промис
+
 //? Асинхронные функции — функции, которые возвращают промисы.
 
-//! fetch - функция, которая возвращает промис
 
 //! чтобы функции выполнялись в определенной последовательности (а не кто первей),
 //! то для них создается общая функция, куда каждая функция записывается, и потом вызываем 
