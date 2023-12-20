@@ -88,7 +88,7 @@ startChangeColor2.addEventListener('click', ()=> {
 
 
 
-async function(e) {
+async function request() {
     let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
     let commits = await response.json()
     // !!!ВАЖНО!!!!      console.log(commits.Search)
