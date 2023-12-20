@@ -7,9 +7,7 @@ import './style.css'
 
 
 const startChangeColor = document.querySelector('#startChangeColor') as HTMLButtonElement
-const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
 const randomColor = document.querySelector <HTMLDivElement>('#randomColor')  
-const randomColor2 = document.querySelector <HTMLDivElement>('#randomColor2')  
 const scoreNum = document.querySelector('#scoreNum') as HTMLDivElement
 
 
@@ -20,7 +18,7 @@ const monkey = document.querySelector('#monkey') as HTMLPictureElement
 
 startChangeColor.addEventListener('mouseup', ()=> {
     giftPicture.style.transition = 3 +'s'
-
+    
     let x = randomColor.children[(Math.round(Math.random()*9))] 
     
     if(x.style.backgroundColor == 'yellow') {
@@ -33,7 +31,7 @@ startChangeColor.addEventListener('mouseup', ()=> {
         scoreNum.innerHTML += `${x.innerHTML} `
     }
     
-    if (x==randomColor.children[9]){
+    if (x==randomColor.children[4]){
         // alert('Вы выиграли 0 рублей')
         monkey.style.display = 'block'
         giftPicture.style.display = 'block'
@@ -54,20 +52,28 @@ giftPicture.addEventListener('click',()=> {
         monkey.style.transition = 3 +'s'
     }, 2500);
 })
+
+
+
+
+
+
+const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
+const randomColor2 = document.querySelector('#randomColor2') as HTMLDivElement
+
+startChangeColor2.addEventListener('click', ()=> {
+    for (let a of randomColor2.children) {
+        a.classList.remove('yellow')
+    }
+    let x = randomColor2?.children[(Math.round(Math.random()*9))] 
     
- 
-
-    startChangeColor2.addEventListener('click', ()=> {
-        let x = randomColor2?.children[(Math.round(Math.random()*9))] 
-        
-        x.style.backgroundColor = 'greenyellow'
-        x.style.color = 'white'
-        
-        setTimeout(()=> {
-            x.style.backgroundColor = 'transparent'
+    x?.classList.add('yellow')
+    
+    // setTimeout(()=> {
+    //     x?.classList.remove('yellow')
             
-        },500)            
-    })
+    //     },500)            
+})
 
 
 
@@ -79,17 +85,19 @@ giftPicture.addEventListener('click',()=> {
 
 
 
-let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
-let commits = await response.json()
-// !!!ВАЖНО!!!!      console.log(commits.Search)
+
+
+
+async function(e) {
+    let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
+    let commits = await response.json()
+    // !!!ВАЖНО!!!!      console.log(commits.Search)
+}
 
 
 
 
-
-//! РАЗБОР URL-адреса страницы 
-//! http://localhost:5173/Asynchrony_in_JavaScript/
-
+ 
 //! Полная ссылка
 // let url = window.location.href
 // console.log(url)
@@ -109,7 +117,7 @@ let commits = await response.json()
 const urlAddress = document.querySelector('#urlAddress') as HTMLDivElement
 
 urlAddress.children[1].innerHTML = `Полный адрес: ${window.location}`
-urlAddress.children[2].innerHTML = `Протокол(делает запрос к серверу): ${window.location.protocol}`
+urlAddress.children[2].innerHTML = `Протокол: ${window.location.protocol}`
 urlAddress.children[3].innerHTML = `Порт: ${window.location.port}`
 urlAddress.children[4].innerHTML = `history: ${JSON.stringify(window.history)}`
 urlAddress.children[5].innerHTML = `history: ${JSON.stringify(window.navigator)}`
