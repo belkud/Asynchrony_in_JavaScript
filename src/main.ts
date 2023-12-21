@@ -4,22 +4,21 @@ import './style.css'
 
 
 const startChangeColor = document.querySelector('#startChangeColor') as HTMLButtonElement
-// const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
 const randomColor = document.querySelector <HTMLDivElement>('#randomColor')  
-// const randomColor2 = document.querySelector <HTMLDivElement>('#randomColor2')  
 const scoreNum = document.querySelector('#scoreNum') as HTMLDivElement
 
 
 const giftPicture = document.querySelector('#giftPicture') as HTMLPictureElement
 const monkey = document.querySelector('#monkey') as HTMLPictureElement
 
+// s
 
 
 startChangeColor.addEventListener('mouseup', ()=> {
     giftPicture.style.transition = 3 +'s'
 
-    let x = randomColor.children[(Math.round(Math.random()*9))] 
     
+    let x = randomColor.children[(Math.round(Math.random()*9))] 
     if(x.style.backgroundColor == 'yellow') {
         x.style.backgroundColor = 'transparent'
         
@@ -37,6 +36,8 @@ startChangeColor.addEventListener('mouseup', ()=> {
     }
     console.log(x);
     
+
+
     
 })
 giftPicture.addEventListener('click',()=> {
@@ -46,12 +47,13 @@ giftPicture.addEventListener('click',()=> {
         monkey.style.transition = 3 +'s'
     }, 500);
     setTimeout(() => {
-        monkey.style.marginTop = 0 +'px'
         monkey.style.transition = 3 +'s'
+        monkey.style.marginTop = 0 +'px'
     }, 2500);
 })
     
  
+
 
 const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
 const randomColor2 = document.querySelector('#randomColor2') as HTMLDivElement
