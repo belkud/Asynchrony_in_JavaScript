@@ -2,16 +2,56 @@ import './style.css'
 
 
 
+const photosFetch = document.querySelector('#photos') as HTMLDivElement
+
+
+async function photos() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/photos')
+    const json = await response.json()
+
+    for (let i = 0; i < 10; i++) {
+        console.log(json[i].thumbnailUrl);
+        photosFetch.innerHTML += `${json[i].thumbnailUrl} <br>`
+    }
+    console.log(json);
+    
+    // const element = JSON.stringify(json)
+    // console.log(JSON.stringify(json));
+    
+    
+}
+photos()
+
+
+
+
+// async function request() {
+//     let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
+//     let commits = await response.json()
+//     console.log(commits.Search)
+//     }
+//     request()
+//     // !!!ВАЖНО!!!!      
+    
+
+
+
+
+
+
 
 const startChangeColor = document.querySelector('#startChangeColor') as HTMLButtonElement
-const randomColor = document.querySelector <HTMLDivElement>('#randomColor')  
+const randomColor = document.querySelector  ('#randomColor')  as HTMLDivElement
 const scoreNum = document.querySelector('#scoreNum') as HTMLDivElement
 
 
 const giftPicture = document.querySelector('#giftPicture') as HTMLPictureElement
 const monkey = document.querySelector('#monkey') as HTMLPictureElement
 
-// s
+
+
+
+
 
 
 startChangeColor.addEventListener('mouseup', ()=> {
@@ -21,25 +61,18 @@ startChangeColor.addEventListener('mouseup', ()=> {
     let x = randomColor.children[(Math.round(Math.random()*9))] 
     if(x.style.backgroundColor == 'yellow') {
         x.style.backgroundColor = 'transparent'
-        
-        scoreNum.innerHTML += `${x.innerHTML} `
-    } else {
-        x.style.backgroundColor = 'yellow'
-        
-        scoreNum.innerHTML += `${x.innerHTML} `
+     } else {
+        x.style.backgroundColor = 'yellow'    
     }
+    scoreNum.innerHTML += `${x.innerHTML} `
     
     if (x==randomColor.children[4]){
         monkey.style.display = 'block'
         giftPicture.style.display = 'block'
-        
-    }
-    console.log(x);
-    
-
-
-    
+    }  
 })
+
+
 giftPicture.addEventListener('click',()=> {
     alert('Вы выиграли 0 рублей')
     setTimeout(() => {
@@ -62,6 +95,7 @@ startChangeColor2.addEventListener('click', ()=> {
     for (let a of randomColor2.children) {
         a.classList.remove('yellow')
     }
+ 
     let x = randomColor2?.children[(Math.round(Math.random()*9))] 
     
     x?.classList.add('yellow')
@@ -71,6 +105,52 @@ startChangeColor2.addEventListener('click', ()=> {
             
     //     },500)            
 })
+
+
+
+
+
+
+
+
+// const randomColort = document.querySelector <HTMLDivElement>('#randomColor')  
+
+
+
+
+const startChangeColor3 = document.querySelector('#startChangeColor3') as HTMLButtonElement
+const randomColor3 = document.querySelector('#randomColor3')
+
+
+startChangeColor3.addEventListener('click', ()=>{
+    let color = randomColor3.children[(Math.round(Math.random()*10))]
+    color.style.backgroundColor = 'yellowgreen'
+
+    setTimeout(() => {
+        color.style.backgroundColor = 'transparent'
+    }, 500);
+
+
+
+    console.log(color)
+
+
+    // for (let i = 0; i < randomColor3.length; i++) {
+        
+    // }
+    
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -122,10 +202,10 @@ urlAddress.children[4].innerHTML = `history: ${JSON.stringify(window.history)}`
 urlAddress.children[5].innerHTML = `history: ${JSON.stringify(window.navigator)}`
 urlAddress.children[6].innerHTML = `history: ${JSON.stringify(window.screen)}`
 
-console.log(window.history);
-console.log(window.navigator);
-console.log(window.screen.height);
-console.log(window.fetch)
+// console.log(window.history);
+// console.log(window.navigator);
+// console.log(window.screen.height);
+// console.log(window.fetch)
 
 
 // document.addEventListener('mousemove',(e)=> {
@@ -369,23 +449,23 @@ const promise = new Promise((resolve)=> {
 
 promise
 .then(()=> {
-    console.log('Выполнено');
+    // console.log('Выполнено');
 })
 .catch((err)=> {
     console.log(err.message);
 })
 .finally(()=>{
-    console.log('Завешение promisa');
+    // console.log('Завешение promisa');
 })
 
 console.log(promise);
 
 //! 2 способ
-fetch ('https://jsonplaceholder.typicode.com/todos')
-.then((response)=> response.json())
-.then((json)=> (json))
-.catch((err)=> console.error(err.message))
-.finally(()=>{console.log('Завешение promisa')})
+// fetch ('https://jsonplaceholder.typicode.com/todos')
+// .then((response)=> response.json())
+// .then((json)=> (json))
+// .catch((err)=> console.error(err.message))
+// .finally(()=>{console.log('Завешение promisa')})
 
 //! для улучшения читабельности способа выше
 
@@ -832,8 +912,8 @@ fetch ('https://jsonplaceholder.typicode.com/todos')
         for (let i=0; i<10; i++) {
             urlAddress.children[9].innerHTML += `${i+1} ${json[i].email} <br>`
         }
-       console.log(json);
-       console.log(response);
+    //    console.log(json);
+    //    console.log(response);
     }
 
     const showList = document.querySelector ('#showList') as HTMLButtonElement
@@ -867,7 +947,7 @@ const entireInfo = document.querySelector('#entireInfo') as HTMLDivElement
 const api2 = ('https://jsonplaceholder.typicode.com/posts')
 
 
-console.log(api2);
+// console.log(api2);
 
 
 async function checkPosts () {
@@ -883,14 +963,13 @@ async function checkPosts () {
                 entireInfo.innerHTML += `${i+1} ${posts[i].title}<br>`
             }
                 
-                cosnsole.log(response.status);
+                console.log(response.status);
         } else {
                 console.log(response.status);        
         }
 
     } catch (error) {
-        console.log(error.message);
-        console.log(`ошибка: "${error.message.split()}"`);
+        // console.log(error.message);
         
     }
     

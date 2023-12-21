@@ -15,12 +15,12 @@ body {
 
 /*! Рандомный жёлтый цвет */
 
-#randomColor, #randomColor2 {
+#randomColor, #randomColor2, #randomColor3 {
   display: flex;
   margin: 50px;
 }
 
-#randomColor>div, #randomColor2>div {
+#randomColor>div, #randomColor2>div, #randomColor3>div {
 border: 1px solid #000;
 border-right: none;
 width: 60px;
@@ -31,7 +31,7 @@ text-align: center;
 
 
 
-#startChangeColor, #startChangeColor2, #showList {
+#startChangeColor, #startChangeColor2, #showList, #startChangeColor3 {
   width: 100px;
   margin-left: 50px;
   background-color: rgb(65, 152, 228);
