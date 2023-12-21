@@ -1,15 +1,12 @@
 import './style.css'
 
- 
-
-
 
 
 
 const startChangeColor = document.querySelector('#startChangeColor') as HTMLButtonElement
-const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
+// const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
 const randomColor = document.querySelector <HTMLDivElement>('#randomColor')  
-const randomColor2 = document.querySelector <HTMLDivElement>('#randomColor2')  
+// const randomColor2 = document.querySelector <HTMLDivElement>('#randomColor2')  
 const scoreNum = document.querySelector('#scoreNum') as HTMLDivElement
 
 
@@ -33,8 +30,7 @@ startChangeColor.addEventListener('mouseup', ()=> {
         scoreNum.innerHTML += `${x.innerHTML} `
     }
     
-    if (x==randomColor.children[9]){
-        // alert('Вы выиграли 0 рублей')
+    if (x==randomColor.children[4]){
         monkey.style.display = 'block'
         giftPicture.style.display = 'block'
         
@@ -57,17 +53,22 @@ giftPicture.addEventListener('click',()=> {
     
  
 
-    startChangeColor2.addEventListener('click', ()=> {
-        let x = randomColor2?.children[(Math.round(Math.random()*9))] 
-        
-        x.style.backgroundColor = 'greenyellow'
-        x.style.color = 'white'
-        
-        setTimeout(()=> {
-            x.style.backgroundColor = 'transparent'
+const startChangeColor2 = document.querySelector('#startChangeColor2') as HTMLButtonElement
+const randomColor2 = document.querySelector('#randomColor2') as HTMLDivElement
+
+startChangeColor2.addEventListener('click', ()=> {
+    for (let a of randomColor2.children) {
+        a.classList.remove('yellow')
+    }
+    let x = randomColor2?.children[(Math.round(Math.random()*9))] 
+    
+    x?.classList.add('yellow')
+    
+    // setTimeout(()=> {
+    //     x?.classList.remove('yellow')
             
-        },500)            
-    })
+    //     },500)            
+})
 
 
 
@@ -79,9 +80,13 @@ giftPicture.addEventListener('click',()=> {
 
 
 
+async function request() {
 let response = await fetch(`https://www.omdbapi.com/?&apikey=928973f2&s=red&page=1`)
 let commits = await response.json()
-// !!!ВАЖНО!!!!      console.log(commits.Search)
+console.log(commits.Search)
+}
+request()
+// !!!ВАЖНО!!!!      
 
 
 
@@ -114,8 +119,6 @@ urlAddress.children[3].innerHTML = `Порт: ${window.location.port}`
 urlAddress.children[4].innerHTML = `history: ${JSON.stringify(window.history)}`
 urlAddress.children[5].innerHTML = `history: ${JSON.stringify(window.navigator)}`
 urlAddress.children[6].innerHTML = `history: ${JSON.stringify(window.screen)}`
-urlAddress.children[7].innerHTML = `history: ${JSON.stringify(window.fetch)}`
-// console.log(urlAddress.children[2]);
 
 console.log(window.history);
 console.log(window.navigator);
@@ -378,7 +381,7 @@ console.log(promise);
 //! 2 способ
 fetch ('https://jsonplaceholder.typicode.com/todos')
 .then((response)=> response.json())
-.then((json)=>console.log(json))
+.then((json)=> (json))
 .catch((err)=> console.error(err.message))
 .finally(()=>{console.log('Завешение promisa')})
 
@@ -740,4 +743,159 @@ fetch ('https://jsonplaceholder.typicode.com/todos')
 //   }
 //   f()
 
-  
+
+
+
+
+
+
+
+// async function takeResult() {
+    //     const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+    //     const json = await response.json()
+    //     console.log(response.headers);
+    
+    
+    //     for (let i= 0; i<10; i++) {
+        //         console.log(json[i].title);
+        //         console.log(i);
+        //         urlAddress.children[9].innerHTML += ` ${i}.  ${json[i].title} <br>`
+        //     }
+        //     console.log(json);
+        
+        //     try {
+            //         if (response.ok) {
+                //             console.log(`${(response)} выполнился`);
+                //         }else {
+                    //             console.error(error);
+                    
+                    
+                    //         }
+                    //     } catch (error) {
+                        
+                        //     }
+                        // }
+                        // takeResult()
+
+
+
+
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+    //! Вывести
+    // "name": "Leanne Graham",
+    //         "username": "Bret",
+    //         "email": "Sincere@april.biz",
+
+
+
+    async function todos(){
+       const response = await fetch ('https://jsonplaceholder.typicode.com/users')
+       
+       const json = await response.json() 
+        //! try catch - проверка на ошибки (НЕТУ ДАЛЬНЕЙШЕЙ ОСТАНОВКИ ДРУГИХ КОДОВ)
+       try {
+           
+           //!    проверка пришёл или нет ответ с сервера
+        if (response.ok) {
+            console.log(response.status);        
+        } else {
+            console.log(response.status);        
+        }
+
+    } catch (error) {
+        console.log('ошибка ' + error.message);
+        
+    }
+
+
+       urlAddress.children[8].innerHTML = `<br> Names: <br>`
+       for (let i=0; i<10; i++) {
+           urlAddress.children[8].innerHTML += `${i+1} ${json[i].name} <br>`
+        }
+        
+
+        urlAddress.children[9].innerHTML = `<br> Email: <br>`
+        for (let i=0; i<10; i++) {
+            urlAddress.children[9].innerHTML += `${i+1} ${json[i].email} <br>`
+        }
+       console.log(json);
+       console.log(response);
+    }
+
+    const showList = document.querySelector ('#showList') as HTMLButtonElement
+    showList.addEventListener ('click', ()=> {
+        if(urlAddress.children[8].style.display == 'none'){
+        urlAddress.children[8].style.display = 'block'
+        urlAddress.children[9].style.display = 'block'
+    } else{
+        urlAddress.children[8].style.display = 'none'
+        urlAddress.children[9].style.display = 'none'
+
+        }
+    })
+
+         todos()
+
+
+
+
+         
+
+
+//! Вывести информацию из ссылки
+        //  https://jsonplaceholder.typicode.com/posts
+
+
+
+
+const entireInfo = document.querySelector('#entireInfo') as HTMLDivElement
+
+const api2 = ('https://jsonplaceholder.typicode.com/posts')
+
+
+console.log(api2);
+
+
+async function checkPosts () {
+    const response = await fetch(api2)
+    const posts = await response.json()
+
+
+
+    try {
+        
+        if (response.ok) {
+            for (let i = 0; i < posts.length; i++) {
+                entireInfo.innerHTML += `${i+1} ${posts[i].title}<br>`
+            }
+                
+                cosnsole.log(response.status);
+        } else {
+                console.log(response.status);        
+        }
+
+    } catch (error) {
+        console.log(error.message);
+        console.log(`ошибка: "${error.message.split()}"`);
+        
+    }
+    
+
+
+
+    
+}
+
+checkPosts()

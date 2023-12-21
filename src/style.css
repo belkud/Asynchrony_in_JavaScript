@@ -21,15 +21,23 @@ border: 1px solid #000;
 border-right: none;
 width: 60px;
 text-align: center;
-background-color: transparent;
-/* color: aliceblue; */
 }
 
-#startChangeColor, #startChangeColor2 {
+#startChangeColor, #startChangeColor2, #showList {
   width: 100px;
   margin-left: 50px;
   background-color: rgb(65, 152, 228);
   color: aliceblue;
+}
+
+.yellow {
+  background-color: yellow ;
+  color: white;
+}
+
+#showList {
+  width: 200px;
+  margin-top: 25px;
 }
 
 #scoreNum {
@@ -45,7 +53,6 @@ background-color: transparent;
 #monkey {
   z-index: -1;
 }
-
 
 
 
