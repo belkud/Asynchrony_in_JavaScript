@@ -8,12 +8,25 @@ body {
   background-color: rgb(150, 148, 148);
 }
 
-
+#photos {
+  border: 1px solid #000;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
 
 #photos>img {
   border: 3px solid red;
   margin: 10px;
+  width: 150px;
 }
+
+#changeDiv {
+  color: greenyellow;
+  display: flex;
+}
+
+
 
 .yellow {
   background-color: yellow;

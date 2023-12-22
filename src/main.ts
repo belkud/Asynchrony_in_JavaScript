@@ -8,7 +8,6 @@ const image_container = document.querySelector('#image_container') as HTMLImageE
 
 
 
-
 async function photos() {
     const response = await fetch('https://jsonplaceholder.typicode.com/photos')
     const json = await response.json()
@@ -16,22 +15,32 @@ async function photos() {
     let mass = ['92c952', '771796', '24f355', 'd32776', 'f66b97', '56a8c2', 'b0f7cc', '54176f', '51aa97', '810b14']
     
     image_container.addEventListener('click',()=> {
-
-         const colored = mass[(Math.round(Math.random()*10))]
-         image_container.src = `https://via.placeholder.com/150/${colored}`;
-            console.log(colored);
+        
+        const colored = mass[(Math.round(Math.random()*10))]
+        image_container.src = `https://via.placeholder.com/150/${colored}`;
+        console.log(colored);
     })
-
+    
     for (let i = 0; i < mass.length; i++) {
-        photosFetch.innerHTML += `<img src="${json[i].thumbnailUrl}">`
+        photosFetch.innerHTML += `
+        <h5>${json[i].title}</h5>
+        <img src="${json[i].thumbnailUrl}"> 
+        <div id='changeDiv'>123</div>
+        <div id='thumbnailUrl'>link: ${json[i].thumbnailUrl}</div>
+        
+        `
+        
+        const changeDiv = document.querySelector('#changeDiv') as HTMLDivElement
+        console.log(changeDiv);
     }
+    // changeDiv.innerText = 'adff'
+    
 }
 photos()
 
+console.log(Math.round(Math.random()*10));
 
-    console.log(Math.round(Math.random()*10));
-    
-   
+
    
     
     
