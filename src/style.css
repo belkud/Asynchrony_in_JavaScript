@@ -8,6 +8,13 @@ body {
   background-color: rgb(150, 148, 148);
 }
 
+
+
+#photos>img {
+  border: 3px solid red;
+  margin: 10px;
+}
+
 .yellow {
   background-color: yellow;
   color: white;
