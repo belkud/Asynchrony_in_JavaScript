@@ -23,7 +23,7 @@ async function photos() {
     })
 
     for (let i = 0; i < mass.length; i++) {
-        photosFetch.innerHTML += `${json[i].thumbnailUrl} <br>`
+        photosFetch.innerHTML += `<img src="${json[i].thumbnailUrl}">`
     }
 }
 photos()
