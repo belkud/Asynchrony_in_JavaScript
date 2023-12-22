@@ -2,25 +2,39 @@ import './style.css'
 
 
 
+
 const photosFetch = document.querySelector('#photos') as HTMLDivElement
+const image_container = document.querySelector('#image_container') as HTMLImageElement
+
+
 
 
 async function photos() {
     const response = await fetch('https://jsonplaceholder.typicode.com/photos')
     const json = await response.json()
+    
+    let mass = ['92c952', '771796', '24f355', 'd32776', 'f66b97', '56a8c2', 'b0f7cc', '54176f', '51aa97', '810b14']
+    
+    image_container.addEventListener('click',()=> {
 
-    for (let i = 0; i < 10; i++) {
-        console.log(json[i].thumbnailUrl);
+         const colored = mass[(Math.round(Math.random()*10))]
+         image_container.src = `https://via.placeholder.com/150/${colored}`;
+            console.log(colored);
+    })
+
+    for (let i = 0; i < mass.length; i++) {
         photosFetch.innerHTML += `${json[i].thumbnailUrl} <br>`
     }
-    console.log(json);
-    
-    // const element = JSON.stringify(json)
-    // console.log(JSON.stringify(json));
-    
-    
 }
 photos()
+
+
+    console.log(Math.round(Math.random()*10));
+    
+   
+   
+    
+    
 
 
 
