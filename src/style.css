@@ -161,6 +161,7 @@ transition: .3s;
 
 
 
+
 /*! Анимация машинки */
 #car {
  animation:move ease-out 5s forwards infinite; 
